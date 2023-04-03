@@ -207,7 +207,7 @@ const productview = (name) => {
                     statuscode: 200,
                     status: true,
                     message: "data found",
-                    result: result
+                    result
                 }
             }
             else {

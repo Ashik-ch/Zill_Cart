@@ -8,8 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+
+  // @Output() openEvent = new EventEmitter
+
+
   username: any
   type: any
+  nav: any
 
   constructor(private rout: Router, private location: Location) { }
 
@@ -17,15 +22,15 @@ export class NavbarComponent {
 
     this.type = JSON.parse(localStorage.getItem("type") || "")
     this.username = JSON.parse(localStorage.getItem("username") || "")
-     // Backinig avoidance when logut clicked
-     if(!localStorage.getItem("username")){
+    // Backinig avoidance when logut clicked
+    if (!localStorage.getItem("username")) {
       alert("Login First")
       this.rout.navigateByUrl("login")
     }
 
   }
 
-  
+
   logout() {
     this.rout.navigate(['']);
 
@@ -36,4 +41,6 @@ export class NavbarComponent {
     localStorage.removeItem('type')
 
   }
+
+  
 }

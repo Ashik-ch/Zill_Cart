@@ -85,8 +85,9 @@ export class ServiceService {
   //   return this.http.get('http://localhost:3000/product/' + name)
   // }
 
+  // each product view
   productview(name: any): Observable<any> {
-    return this.http.get('http://localhost:3000/product/' + name)
+    return this.http.get(`http://localhost:3000/adminuserhome/${name}`)
 
 
   }

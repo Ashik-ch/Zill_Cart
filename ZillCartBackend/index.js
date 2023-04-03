@@ -141,7 +141,7 @@ app.get('/mycart/:username', (req, res) => {
         })
 })
 
-
+// delete in cart 
 app.delete('/mycart/:username/:name', (req, res) => {
     const { username, name } = req.params;
     service.deleteCartItem(username, name)
@@ -159,6 +159,7 @@ app.delete('/mycart/:username/:name', (req, res) => {
         });
 });
 
+// clear cart
 app.delete('/mycart/:username', (req, res) => {
     const username = req.params.username;
     db.Cart.deleteMany({ username })
@@ -171,14 +172,14 @@ app.delete('/mycart/:username', (req, res) => {
 });
 
 
-app.get('/product/:name', (req, res) => {
+app.get('/adminuserhome/:name', (req, res) => {
     service.productview(req.params.name)
         .then(data => {
             console.log("view", data);
             res.status(data.statuscode).json({
                 statuscode: data.statuscode,
                 status: data.status,
-                data: data.data
+                data: data.result
             });
         })
 })

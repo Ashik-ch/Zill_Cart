@@ -8,13 +8,11 @@
     </div>
 
     <div class="container row" style="margin-left: 100px;">
-
-
         <div class="card  card-cascade wider m-4" *ngFor="let t of elements  | filter:searchTerm" style="width: 300px;">
-
             <!-- <a href="product/{{t.name}}"> -->
 
-                <div>
+            <div>
+                <a class="text-decoration-none" href="/adminuserhome/{{t.name}}">
                     <div class="view view-cascade overlay">
                         <img class="card-img-top" src="{{t.img}}" style="height: 250px; width: 300px;"
                             alt="Card image cap">
@@ -30,11 +28,13 @@
                         <span class="text-dark"> {{t.status}} Product</span>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-outline-primary mb-4 " (click)="buy(t)"> Add To Cart</button>
-
+                        <button class="btn btn-outline-success m-4 " (click)="buy(t)">
+                            <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i> -->  Add to Cart    
+                        </button>
                     </div>
-                </div>
-
-            <!-- </a> -->
+                </a>
+            </div>
         </div>
+        <!-- </a> -->
     </div>
+</div>

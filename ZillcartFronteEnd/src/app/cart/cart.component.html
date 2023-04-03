@@ -1,3 +1,7 @@
+<!-- <app-navbar (parerntcom)="parentfunction($event)"></app-navbar> -->
+<app-navbar></app-navbar>
+
+
 <div class="cart_section ms-5" *ngIf="items>0">
     <div class="container-fluid ms-5">
         <div class="row ms-4">
@@ -57,8 +61,7 @@
                                     <div class="">
                                         <button type="button" class="delete-btn"
                                             (click)="remove(item)">&#10006;</button>
-                                        <!-- <button class="btn btn-danger btn-2xl p-2"
-                                            (click)="remove(item)">Remove</button> -->
+
                                     </div>
 
                                 </div>
@@ -70,6 +73,7 @@
                             <div class="order_total_title">Order Total:</div>
                             <div class="order_total_amount">{{sum}}</div>
                         </div>
+                        
                     </div>
 
                     <div class="cart_buttons"> <a href="adminuserhome"><button type="button"
@@ -182,8 +186,8 @@
             <div class="cart_buttons m-4">
                 <button type="button" class="button cart_button_clear" data-bs-dismiss="modal">Close</button>
 
-                <button type="button" class=" btn btn-success" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop" (click)="order()">Order</button>
+                <button type="button" class=" btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                    (click)="order()">Order</button>
             </div>
 
 

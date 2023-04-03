@@ -9,12 +9,17 @@ import { ServiceService } from '../service.service';
 })
 export class CartComponent {
 
+// @outpu
+
   elements: any
   element: any
   username: any
   sum: any
   items: any
   name: any
+
+  chy:any
+
   constructor(private service: ServiceService, private AR: ActivatedRoute, private route: Router) { }
 
 
@@ -26,10 +31,6 @@ export class CartComponent {
         console.log("paramsemail", this.username);
       })
     this.cart(this.username)
-
-
-
-
   }
 
 
@@ -41,34 +42,16 @@ export class CartComponent {
         console.log("list", this.elements);
         this.element = this.elements.map((item: any) => item.totalPrice);
         console.log("mapped", this.element);
-
         let sum = 0;
         for (let i = 0; i < this.element.length; i++) {
           sum += this.element[i];
         }
-
         this.sum = Math.ceil(sum)
-
-
-
         console.log("sum", this.sum);
         console.log("lenght", this.items = this.element.length);
-
-
       })
   }
 
-
-  // deleteCartItem() {
-  //   this.cartService.deleteCartItem(this.username, this.name)
-  //     .subscribe(data => {
-  //       console.log(data);
-  //       // handle success response here
-  //     }, error => {
-  //       console.log(error);
-  //       // handle error response here
-  //     });
-  // }
 
 
   remove(item: any) {
@@ -80,18 +63,11 @@ export class CartComponent {
         console.log(item.username, item.name);
         console.log("Response", response);
         location.reload()
-
-
       }, (error: any) => {
         console.log(error);
-
       })
 
   }
-
-
-
-
 
 
 
@@ -103,13 +79,15 @@ export class CartComponent {
           this.route.navigateByUrl('adminuserhome');
         }, 2000);
       })
-
-
-
-
   }
 
 
+  
+
+
+  // parentfunction(event) {
+  //   this.chy = 25
+  // }
 
 
 }
