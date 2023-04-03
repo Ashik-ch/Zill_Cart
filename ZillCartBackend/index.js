@@ -38,7 +38,8 @@ app.post('/product', (req, res) => {
     const cost = parseFloat(req.body.cost);
     const gst = parseFloat(req.body.gst);
     const totalPrice = cost + cost * (gst / 100);
-    service.postproduct(req.body.name, req.body.description, req.body.cost, req.body.gst, totalPrice, req.body.img, req.body.status = 'pending')
+    const status = "Pending"
+    service.postproduct(req.body.name, req.body.description, req.body.cost, req.body.gst, totalPrice, req.body.img, status)
         .then(data => {
             console.log("datA", data);
             res.status(data.statuscode).json(data)
@@ -164,7 +165,7 @@ app.delete('/mycart/:username', (req, res) => {
     const username = req.params.username;
     db.Cart.deleteMany({ username })
         .then((data) => {
-            res.status(200).json({ message: 'Cart deleted  successfully!',data });
+            res.status(200).json({ message: 'Cart deleted  successfully!', data });
         })
         .catch((error) => {
             res.status(500).json({ error: error });
@@ -205,7 +206,7 @@ app.get('/adminuserhome/:name', (req, res) => {
 //       });
 //     });
 
-  
+
 
 
 

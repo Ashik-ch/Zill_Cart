@@ -20,8 +20,8 @@ const Product = mongoose.model('Product', {
     // status: String
     status: {
         type: String,
-        enum: ['pending', 'verified', 'rejected'],
-        default: 'pending'
+        enum: ['Pending', 'verified', 'rejected'],
+        default: 'Pending'
     }
 })
 

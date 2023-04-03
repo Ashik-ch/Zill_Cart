@@ -40,7 +40,7 @@ export class AdminUserHomeComponent {
       .subscribe((result: any) => {
         console.log("resultadprod", result)
         alert(result.message)
-        location.reload()
+        // location.reload()
       })
   }
 

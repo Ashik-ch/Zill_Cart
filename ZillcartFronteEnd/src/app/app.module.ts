@@ -15,6 +15,7 @@ import { CartComponent } from './cart/cart.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductviewComponent } from './productview/productview.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ProductsComponent } from './products/products/products.component';
 
 
 
@@ -27,7 +28,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     SuperAdminHomeComponent,
     CartComponent,
     NavbarComponent,
-    ProductviewComponent
+    ProductviewComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

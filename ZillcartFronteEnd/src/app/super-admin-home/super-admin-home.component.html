@@ -1,11 +1,10 @@
-
 <table class="container mt-5 table align-middle mb-0 bg-white table-bordered border border-2 shadow ">
     <thead class="text-dark">
         <tr>
 
             <th>Icon</th>
             <th>Name</th>
-            <th>Decription</th>
+            <th class="description">Decription</th>
             <th>Cost</th>
             <th>GST</th>
             <th>Total cost</th>
@@ -28,7 +27,7 @@
                 </div>
             </td>
             <td>
-                <pre class="text-muted m-2">{{product.description}}</pre>
+                <p class="text-muted m-2 descritption">{{product.description}}</p>
             </td>
             <td>
                 <p class="fw-normal mb-1"> {{product.cost}}</p>
@@ -39,11 +38,33 @@
             <td>{{product.totalprice}}</td>
             <td>{{product.status}}</td>
 
-            <td> 
-                <button class="btn btn-success btn-rounded" *ngIf="product.status == 'Approved'" (click)="verifybtn(product)">
-                    Confirm
-                  </button>
-                  <button    *ngIf="product.status == 'Verified'" class="btn btn-danger" (click)="deleteProduct(product)" >Delete</button>
+            <td>
+
+                <i class="fas fa-check mx-3 fa-lg  text-success" data-bs-toggle="tooltip" data-bs-placement="right" title="Approve"
+                    *ngIf="product.status !== 'Verified' &&  product.status !== 'Pending' " (click)="verifybtn(product)"></i>
+
+
+
+                <i class="fas fa-times m-3 fa-lg" data-bs-toggle="tooltip" data-bs-placement="right" title="Reject"
+                    *ngIf="product.status !==  'Rejected' &&  product.status !== 'Pending'" (click)="rejectbtn(product)"></i>
+
+
+
+                <i class="fas fa-trash m-3 fa-lg   text-danger" data-bs-toggle="tooltip" data-bs-placement="right" title="Delete"
+                    *ngIf="product.status == 'Rejected'" (click)="deleteProduct(product)"></i>
+
+
+
+                <!-- 
+                <button class="btn btn-success btn-rounded" *ngIf="product.status == 'Approved'"
+                    (click)="verifybtn(product)">
+                    Confirm </button>
+                <button class="btn btn-success btn-rounded" *ngIf="product.status == 'Approved'"
+                    (click)="rejectbtn(product)">
+                    Reject </button>
+
+                <button class="btn btn-danger" *ngIf="product.status == 'Verified'"
+                    (click)="deleteProduct(product)">Delete</button> -->
 
             </td>
         </tr>

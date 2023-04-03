@@ -45,6 +45,14 @@ export class ServiceService {
     return this.http.put('http://localhost:3000/verifystatus', body);
   }
 
+  rejectProduct(product: any) {
+    const body = {
+      name: product.name,
+      status: 'Rejected'
+    };
+    return this.http.put('http://localhost:3000/verifystatus', body);
+  }
+
   // deleteProduct(product: any) {
   //   const body = { name: product.name, status: 'Verified' }
   //   console.log("body", body);

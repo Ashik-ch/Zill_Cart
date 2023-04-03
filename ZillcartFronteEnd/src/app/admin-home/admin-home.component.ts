@@ -61,6 +61,13 @@ export class AdminHomeComponent {
         this.productlist();
       });
   }
+  rejectProduct(product: any) {
+    this.service.rejectProduct(product)
+      .subscribe(() => {
+        this.productlist();
+      });
+  }
+
 
 
 

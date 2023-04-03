@@ -33,6 +33,13 @@ export class SuperAdminHomeComponent {
       });
   }
 
+
+  rejectbtn(product:any){
+    this.service.rejectProduct(product)
+    .subscribe(() => {
+      this.productlist();
+    });
+  }
   
 
   deleteProduct(product: any) {

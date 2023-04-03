@@ -5,7 +5,7 @@ import { AdminUserHomeComponent } from './admin-user/admin-user-home/admin-user-
 import { CartComponent } from './cart/cart.component';
 
 import { LoginComponent } from './login/login.component';
-// import { ProductsComponent } from './products/products/products.component';
+import { ProductsComponent } from './products/products/products.component';
 import { ProductviewComponent } from './productview/productview.component';
 import { SuperAdminHomeComponent } from './super-admin-home/super-admin-home.component';
 
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'superadminhome', component: SuperAdminHomeComponent },
   { path: 'adminuserhome', component: AdminUserHomeComponent },
   { path: 'cart/:username', component: CartComponent },
-  // { path: 'products', component: ProductsComponent },
+  { path: 'products', component: ProductsComponent },
 
   { path: 'adminuserhome/:name', component: ProductviewComponent },
 
