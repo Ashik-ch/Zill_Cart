@@ -1,0 +1,47 @@
+<div class="header-blue ">
+    <div class="container col-8">
+        <div class="row  ">
+            <div class="registration-form border border-2 p-5 mt-5">
+                <form>
+                    <div class="  font-weight-bold text-light   text-center">
+                      <h1>Add Product</h1>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control item" id="Name" placeholder="Name" name="name"
+                            [(ngModel)]="name"> <br>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control item" id="Description" name="description"
+                            placeholder="Description" [(ngModel)]="description"> <br>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control item" id="Cost" placeholder="Cost" name="cost"
+                            [(ngModel)]="cost"> <br>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control item" id="GST" placeholder="GST" name="gst"
+                            [(ngModel)]="gst"> <br>
+                    </div>
+                    <!-- <div class="form-group">
+                    <input type="text" class="form-control item" id="Total" placeholder="Total Price" name="totalprice"
+                        [(ngModel)]="totalprice"> <br>
+                </div> -->
+                    <div class="form-group">
+                        <input type="file" class="form-control item" id="img" name="img" [(ngModel)]="img">
+                    </div>
+
+
+
+
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-light" (click)="addproduct()">Add
+                            Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

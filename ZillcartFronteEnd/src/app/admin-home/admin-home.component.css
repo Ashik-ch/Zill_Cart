@@ -1,0 +1,35 @@
+.header-blue .navbar .form-inline .search-field {
+    display:inline-block;
+    width:80%;
+    background:none;
+    border:none;
+    border-bottom:1px solid transparent;
+    border-radius:0;
+    color:#ccc;
+    box-shadow:none;
+    color:inherit;
+    transition:border-bottom-color 0.3s;
+  }
+  
+  .header-blue .navbar .form-inline .search-field:focus {
+    border-bottom:1px solid #ccc;
+  }
+
+
+
+  
+ .text-animation {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+.text-animation h1 {
+    display: inline-block;
+    transform: translateX(-100%);
+    animation: text-animation 1s forwards;
+}
+@keyframes text-animation {
+    to {
+        transform: translateX(0);
+    }
+}

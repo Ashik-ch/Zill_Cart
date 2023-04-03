@@ -1,0 +1,80 @@
+
+    <div>
+
+        <div class="header-blue">
+            <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+                <div class="container"><a class="navbar-brand" href="">
+                        <h1> <b> ZillCart </b> </h1>
+                    </a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span
+                            class="sr-only">ZillCart</span><span class="navbar-toggler-icon"></span></button>
+
+                </div>
+            </nav>
+            <div class="container hero">
+                <div class="row">
+                    <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+                        <h1>Your one-stop shop for all your needs.</h1>
+                        <p>Our easy-to-use website, fast shipping, and secure payment options make shopping with us a
+                            breeze. Join the shopping revolution and shop with Zillcart today! </p>
+
+                        <button type="button" class="btn btn-light btn-lg action-button" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Login
+                        </button>
+                    </div>
+                    <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                    <h1 class="text-info">Login</h1>
+                </div> -->
+                <div class="modal-body">
+                    <div id="intro" class=" shadow-2-strong">
+                        <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.5);">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-xl-12 col-md-12">
+
+                                        <h1 class="text-light font-weight-bold">Login</h1>
+                                        <form class="bg-mute text-light rounded-5 shadow-5-strong p-5"
+                                            (ngSubmit)="login()">
+                                            <div class="form-outline mb-4 text-start" >
+                                                <input type="text" id="form1Example1" class="form-control"
+                                                    [(ngModel)]="username" name="username" />
+                                                <label class="form-label text-light" for="form1Example1">Name</label>
+                                            </div>
+                                            <div class="form-outline mb-4 text-start">
+                                                <input type="password" id="form1Example2" class="form-control"
+                                                    name="password" [(ngModel)]="password" />
+                                                <label class="form-label text-light"
+                                                    for="form1Example2">Password</label>
+                                            </div>
+
+
+                                            <button type="submit" class="btn btn-primary btn-block"
+                                                data-bs-dismiss="modal">Sign in</button>
+
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,209 @@
+<div class="cart_section ms-5" *ngIf="items>0">
+    <div class="container-fluid ms-5">
+        <div class="row ms-4">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cart_container">
+                    <div class="cart_title text-light">Shopping Cart<small> ({{items}} item in your cart) </small></div>
+                    <div class="cart_items">
+
+
+                        <ul class="cart_list my-5">
+                            <li class="cart_item clearfix">
+                                <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                    <div class="cart_item_name cart_info_col">
+                                        <div class="cart_item_text">Image</div>
+                                    </div>
+                                    <div class="cart_item_name cart_info_col">
+                                        <div class="cart_item_text">Item</div>
+                                    </div>
+                                    <div class="cart_item_color cart_info_col">
+                                        <div class="cart_item_text ms-5">GST</div>
+                                    </div>
+                                    <div class="cart_item_quantity cart_info_col">
+                                        <div class="cart_item_text ms-5">Quantity</div>
+                                    </div>
+                                    <div class="cart_item_price cart_info_col">
+                                        <div class="cart_item_text ms-5">Price</div>
+                                    </div>
+
+                                    <div class="cart_item_total cart_info_col">
+                                        <div class="cart_item_text ms-5">Total</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+
+                        <ul class="cart_list" *ngFor="let item of elements">
+                            <li class="cart_item clearfix">
+                                <div class="cart_item_image"><img src="{{item.img}}" alt=""></div>
+                                <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                    <div class="cart_item_name cart_info_col">
+                                        <div class="cart_item_text">{{ item.name }}</div>
+                                    </div>
+                                    <div class="cart_item_color cart_info_col">
+                                        <div class="cart_item_text">{{item.gst}}</div>
+                                    </div>
+                                    <div class="cart_item_quantity cart_info_col">
+                                        <div class="cart_item_text">1</div>
+                                    </div>
+                                    <div class="cart_item_price cart_info_col">
+                                        <div class="cart_item_text">{{item.cost}}</div>
+                                    </div>
+
+                                    <div class="cart_item_total cart_info_col">
+                                        <div class="cart_item_text">{{item.totalPrice}}</div>
+                                    </div>
+                                    <div class="">
+                                        <button type="button" class="delete-btn"
+                                            (click)="remove(item)">&#10006;</button>
+                                        <!-- <button class="btn btn-danger btn-2xl p-2"
+                                            (click)="remove(item)">Remove</button> -->
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="order_total">
+                        <div class="order_total_content text-md-right">
+                            <div class="order_total_title">Order Total:</div>
+                            <div class="order_total_amount">{{sum}}</div>
+                        </div>
+                    </div>
+
+                    <div class="cart_buttons"> <a href="adminuserhome"><button type="button"
+                                class="button cart_button_clear">Continue Shopping</button> </a>
+
+
+                        <button type="button" class="btn btn-outline-primary button cart_button_checkout"
+                            data-bs-toggle="modal" data-bs-target="#staticBackdrop">Summery</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog " style="width: 1200px;">
+        <div class="modal-content  " style="width: 800px; margin-left: 51%;">
+            <div class="modal-header ">
+                <h1 class="modal-title p-4 " id="staticBackdropLabel">Order Summary </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+
+                <div class="cart_section ms-5">
+                    <div class="container-fluid ms-5">
+                        <div class="row ms-4">
+                            <div class="col-lg-10 offset-lg-1">
+                                <div class="cart_container">
+                                    <div class="cart_title">No of items : {{items}} </div>
+                                    <div class="cart_items">
+                                        <ul class="cart_list my-5">
+                                            <li class="cart_item clearfix">
+                                                <div
+                                                    class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                                    <div class="cart_item_name cart_info_col">
+                                                        <div class="cart_item_text">Item</div>
+                                                    </div>
+                                                    <div class="cart_item_color cart_info_col">
+                                                        <div class="cart_item_text ms-5">GST</div>
+                                                    </div>
+                                                    <div class="cart_item_quantity cart_info_col">
+                                                        <div class="cart_item_text ms-5">Quantity</div>
+                                                    </div>
+                                                    <div class="cart_item_price cart_info_col">
+                                                        <div class="cart_item_text ms-5">Price</div>
+                                                    </div>
+
+                                                    <div class="cart_item_total cart_info_col">
+                                                        <div class="cart_item_text ms-5">Total</div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+
+                                        <ul class="cart_list" *ngFor="let item of elements">
+                                            <li class="cart_item clearfix">
+                                                <div
+                                                    class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                                    <div class="cart_item_name cart_info_col">
+                                                        <div class="cart_item_text">{{ item.name }}</div>
+                                                    </div>
+                                                    <div class="cart_item_color cart_info_col">
+                                                        <div class="cart_item_text">{{item.gst}}</div>
+                                                    </div>
+                                                    <div class="cart_item_quantity cart_info_col">
+                                                        <div class="cart_item_text">1</div>
+                                                    </div>
+                                                    <div class="cart_item_price cart_info_col">
+                                                        <div class="cart_item_text">{{item.cost}}</div>
+                                                    </div>
+
+                                                    <div class="cart_item_total cart_info_col">
+                                                        <div class="cart_item_text">{{item.totalPrice}}</div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="order_total">
+                                        <div class="order_total_content text-md-right">
+                                            <div class="order_total_title">Order Total:</div>
+
+                                            <div class="order_total_amount">{{sum}}</div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                </div>
+
+
+            </div>
+            <div class="cart_buttons m-4">
+                <button type="button" class="button cart_button_clear" data-bs-dismiss="modal">Close</button>
+
+                <button type="button" class=" btn btn-success" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop" (click)="order()">Order</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div *ngIf="items===0" class="text-center align-item-center " style="margin-left: 37%; margin-top:20px;">
+    <div class="card  align-item-center">
+        <div>
+            <h1> Your Cart is Empty</h1>
+            <a href="adminuserhome"> <button class="btn btn-outline-primary btn-xl p-2"> Continue Shopping</button> </a>
+        </div>
+
+
+
+
+    </div>
+</div>

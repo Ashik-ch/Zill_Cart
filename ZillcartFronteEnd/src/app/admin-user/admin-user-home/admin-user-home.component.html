@@ -1,0 +1,40 @@
+<div class="header-blue">
+    <div class="container row" style="margin-left: 100px;">
+        <div class="text-animation">
+            <h1 class="text-light">Hy {{ username}},</h1>
+        </div>
+        <input type="search" placeholder="Searchbar" class="form-control my-3  " style="width: 200px; "
+            [(ngModel)]="searchTerm">
+    </div>
+
+    <div class="container row" style="margin-left: 100px;">
+
+
+        <div class="card  card-cascade wider m-4" *ngFor="let t of elements  | filter:searchTerm" style="width: 300px;">
+
+            <!-- <a href="product/{{t.name}}"> -->
+
+                <div>
+                    <div class="view view-cascade overlay">
+                        <img class="card-img-top" src="{{t.img}}" style="height: 250px; width: 300px;"
+                            alt="Card image cap">
+                    </div>
+                    <div class="card__body">
+                        <span class="tag tag-blue">View</span>
+                        <h2><a href="">{{t.name}}</a></h2>
+                        <p>Details: {{t.description}}</p>
+                        <p class=""> Cost: {{t.cost}}
+                        <p>Gst: {{t.gst}}%</p>
+                    </div>
+                    <div class=" text-muted text-center mb-3 ">
+                        <span class="text-dark"> {{t.status}} Product</span>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-outline-primary mb-4 " (click)="buy(t)"> Add To Cart</button>
+
+                    </div>
+                </div>
+
+            <!-- </a> -->
+        </div>
+    </div>

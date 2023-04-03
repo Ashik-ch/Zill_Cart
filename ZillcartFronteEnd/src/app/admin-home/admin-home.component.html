@@ -1,0 +1,61 @@
+<div class="container row" style="margin-left: 100px;">
+    <div class="text-animation">
+        <h1 class="text-light">Hy {{ username}},</h1>
+    </div>
+
+
+
+   
+    <input  type="search" placeholder="Searc here " class="form-control my-3   " style="width: 200px; "
+        [(ngModel)]="searchTerm">
+</div>
+
+<table class="container mt-5 table align-middle mb-0 bg-white table-bordered border border-2 shadow ">
+    <thead class="text-dark">
+        <tr>
+
+            <th>Icon</th>
+            <th>Name</th>
+            <th>Decription</th>
+            <th>Cost</th>
+            <th>GST</th>
+            <th>Total cost</th>
+            <th>Status</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+
+        <tr *ngFor="let product of elements  | filter:searchTerm">
+            <td>
+                <div class="d-flex align-items-center">
+                    <img src="{{product.img}}" alt="" id="imgid" style="width: 45px; height: 45px"
+                        class="rounded-circle" />
+                </div>
+            </td>
+            <td>
+                <div class="ms-3">
+                    <p class="fw-bold mb-1">{{product.name}}</p>
+                </div>
+            </td>
+            <td>
+                <pre class="text-muted m-2" style="width: 500px; white-space: normal;">{{product.description}}</pre>
+            </td>
+            <td>
+                <p class="fw-normal mb-1"> {{product.cost}}</p>
+            </td>
+            <td>
+                <span class=" rounded-pill ">{{product.gst}}</span>
+            </td>
+            <td>{{product.totalprice}}</td>
+            <td>{{product.status}}</td>
+            <td>
+                <button class="btn btn-outline-success btn-rounded mb-1" *ngIf="product.status == 'pending'"
+                    (click)="approvebtn(product)"> Approve </button>
+                <button *ngIf="product.status == 'pending'" class="btn btn-outline-danger"
+                    (click)="deleteProduct(product)">Reject</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
